@@ -55,6 +55,10 @@
       "type": "uid",
       "required": true,
       "targetField": "Title"
+    },
+    "Copies_Available": {
+      "type": "integer",
+      "required": true
     }
   }
 }

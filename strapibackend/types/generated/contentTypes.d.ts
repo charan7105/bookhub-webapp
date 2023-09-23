@@ -387,6 +387,7 @@ export interface ApiBooksCollectionBooksCollection
       }>;
     slug: Attribute.UID<'api::books-collection.books-collection', 'Title'> &
       Attribute.Required;
+    Copies_Available: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

@@ -10,6 +10,7 @@ query{
           Published_Year
           Field
           Price
+          Copies_Available
           
           Book_Image{
             data{
