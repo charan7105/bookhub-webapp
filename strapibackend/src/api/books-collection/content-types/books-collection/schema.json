@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books_collections",
+  "info": {
+    "singularName": "books-collection",
+    "pluralName": "books-collections",
+    "displayName": "Books-collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "Author": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Book_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Published_Year": {
+      "type": "integer",
+      "required": true,
+      "unique": false
+    },
+    "Field": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Price": {
+      "type": "integer",
+      "required": true,
+      "unique": false,
+      "min": 0
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "Title"
+    }
+  }
+}
