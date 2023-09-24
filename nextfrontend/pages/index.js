@@ -1,8 +1,10 @@
+// import '../styles/global.css'; // Global styles first
 import Head from 'next/head'
 // import Link from 'next/link'
 import { useQuery } from 'urql'
 import { BOOKS_QUERY } from '../lib/query'
 import Books from '../components/Books'
+import { Gallery } from '@/styles/gallery'
 
 export default function Home() {
 
@@ -25,12 +27,14 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Hello React</h1>
+        {/* <h1>Hello React</h1> */}
+        <Gallery>
         {
           books.map((booksCollection)=>(
             <Books key={booksCollection.attributes.slug} booksCollection={booksCollection} />
           ))
         }
+        </Gallery>
 
         {/* <Link href={'/about'}> <u>About</u> </Link>*/}
         {/* {}Means JS File */}
