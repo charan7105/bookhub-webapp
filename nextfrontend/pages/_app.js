@@ -2,7 +2,7 @@ import { createClient, cacheExchange, fetchExchange } from '@urql/core'
 import { Provider } from 'urql';
 
 const client = createClient({
-  url: 'http://localhost:1337/graphql',
+  url: process.env.NEXT_PUBLIC_BACKEND_API,
   exchanges: [cacheExchange, fetchExchange],
 })
 

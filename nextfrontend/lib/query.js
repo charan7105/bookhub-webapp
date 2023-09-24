@@ -10,6 +10,7 @@ query{
           Published_Year
           Field
           Price
+          slug
           Copies_Available
           
           Book_Image{

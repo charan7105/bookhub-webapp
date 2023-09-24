@@ -13,7 +13,7 @@ export default function Home() {
   if(fetching) return <p>Loading..</p>
   if(error) return <p>Oh no..{error.message}</p>
   const books = data.booksCollections.data
-  console.log(books)
+  //console.log(books)
 
   return (
     <div>
@@ -28,7 +28,7 @@ export default function Home() {
         <h1>Hello React</h1>
         {
           books.map((booksCollection)=>(
-            <Books booksCollection={booksCollection} />
+            <Books key={booksCollection.attributes.slug} booksCollection={booksCollection} />
           ))
         }
 
