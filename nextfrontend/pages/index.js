@@ -1,4 +1,3 @@
-// import '../styles/global.css'; // Global styles first
 import Head from 'next/head'
 // import Link from 'next/link'
 import { useQuery } from 'urql'

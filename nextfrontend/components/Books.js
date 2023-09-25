@@ -10,7 +10,7 @@ export default function Books({booksCollection}){
     return(
         <AllBooksStyle>
             <div>
-                <img src={Book_Image.data.attributes.formats.small.url} alt="" />
+                <img src={Book_Image.data.attributes.formats.small.url} alt="{Title}" />
             </div>
             <h2>{Title}</h2>
             <h4>By <u>{Author}</u></h4>
