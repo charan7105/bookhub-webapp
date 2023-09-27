@@ -1,2 +1,2 @@
-# bookhub-devrev
-BookHub - A Magnificent Library Management Application
+# BookHub
+BookHub - A Magnificent Book-Commerce Application
