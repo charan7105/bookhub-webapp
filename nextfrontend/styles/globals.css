@@ -16,11 +16,18 @@ body {
 }
 
 h2{
-  padding: 1rem 0rem 0.5rem 0rem;
   font-size: 1.2 rem;
   color: var(--primary);
   font-weight: 800;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.Title{
+  padding: 1rem 0rem 0.5rem 0rem;
   min-height: 5rem;
+   ;
 }
 
 h4{
@@ -41,4 +48,22 @@ p{
 img{
   max-width: 100%; 
   height: auto; 
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #252525;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+h2:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
