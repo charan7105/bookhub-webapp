@@ -4,6 +4,7 @@ import "../styles/globals.css";
 
 const client = createClient({
   url: process.env.NEXT_PUBLIC_BACKEND_API,
+  //Graphql untadi .env lo kavalante chupinchu
   exchanges: [cacheExchange, fetchExchange],
 });
 
