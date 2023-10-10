@@ -5,6 +5,7 @@ export const DetailsStyle = styled.div`
   justify-content: space-between;
   img {
     height: 30rem;
+    padding-left: 4rem;
     /* max-height: 5%; */
     /* width: 50px; */
   }
@@ -12,7 +13,7 @@ export const DetailsStyle = styled.div`
 `;
 
 export const DescriptionStyle = styled.div`
-  width: 40%;
+  width: 50%;
   button {
     font-size: 1rem;
     font-weight: medium;
@@ -68,5 +69,6 @@ export const Buy = styled.button`
 `;
 
 export const CompleteDetailski = styled.div`
-  margin: 0rem 2rem;
+  font-family: inter;
+  margin: 0rem 4rem;
 `;
