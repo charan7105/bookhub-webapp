@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const DetailsStyle = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   img {
+    height: 30rem;
     /* max-height: 5%; */
     /* width: 50px; */
   }
