@@ -1,7 +1,8 @@
 import { createClient, cacheExchange, fetchExchange } from "@urql/core";
 import { Provider } from "urql";
 import "../styles/globals.css";
-import Nav from "@/components/Nav";
+import Nav from "../components/Nav";
+
 
 const client = createClient({
   url: process.env.NEXT_PUBLIC_BACKEND_API,

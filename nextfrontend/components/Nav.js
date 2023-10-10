@@ -1,20 +1,21 @@
+import { FiShoppingBag } from "react-icons/fi";
+import logoDark from "../public/logo-dark.png";
+import { NavbarStyle, NavItems } from "@/styles/NavStyle";
 import Link from "next/link";
-import { FiShoppingBag } from "react-icons/fi"
-import logoDark from '../public/logo-dark.png'
-import { NavbarStyle } from "@/styles/NavStyle";
-
 
 export default function Nav() {
-
-  console.log({logoDark})
-  
+  // console.log({ logoDark });
   return (
     <NavbarStyle>
-      <img src={logoDark.src} alt="BookHub Logo"/>
-      <div>
-        <FiShoppingBag/>
-        <p>Cart</p>
-      </div>
+      <Link href="/">
+        <img src={logoDark.src} alt="BookHub Logo" />
+      </Link>
+      <NavItems>
+        <div>
+          <FiShoppingBag />
+          <h4>Cart</h4>
+        </div>
+      </NavItems>
     </NavbarStyle>
   );
 }
