@@ -16,8 +16,6 @@ export const AllBooksStyle = styled.div`
     cursor: pointer;
   }
 
-
-
   @media (max-width: 768px) {
     /* padding: 1rem;  */
     img {

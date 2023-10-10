@@ -1,5 +1,4 @@
-export const BOOKS_QUERY =
-  `
+export const BOOKS_QUERY = `
 query{
     booksCollections{
       data{
@@ -23,12 +22,11 @@ query{
       }
     }
   }
-`
+`;
 // query getBook($slug: String!) Means We passed a slug which is always a string
 // the main idea is that we're asking the computer to find a particular book based on the special word (slug) we provided
 
-export const GET_BOOK_QUERY =
-  `
+export const GET_BOOK_QUERY = `
 query getBook($slug: String!){
 
   booksCollections(filters: {slug: {eq: $slug}}){
@@ -56,4 +54,4 @@ query getBook($slug: String!){
 }
   
 }
-`
+`;
