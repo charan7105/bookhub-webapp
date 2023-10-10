@@ -6,9 +6,10 @@ import {
   DescriptionStyle,
   Quantity,
   Buy,
+  CompleteDetailski,
 } from "@/styles/BookDetail";
 
-import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai"
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 
 export default function BooksDetails() {
   //Fetch SLUG
@@ -41,24 +42,31 @@ export default function BooksDetails() {
   } = data.booksCollections.data[0].attributes;
 
   return (
-    <DetailsStyle>
-      <img src={Book_Image.data.attributes.formats.small.url} alt={Title} />
-      <DescriptionStyle>
-        <h2>{Title}</h2>
-        <p className="des">{Description}</p>
-        <h4>Published Year: {Published_Year}</h4>
-        <h4>By {Author}</h4>
-        <h4>Price: {Price}/-</h4>
-        <h4>Field: {Field}</h4>
-        <h4>No of Copies Available: {Copies_Available}</h4>
-        <Quantity>
-          <span>No of Copies</span>
-          <button><AiFillPlusCircle/></button>
-          <p>0</p>
-          <button><AiFillMinusCircle/></button>
-        </Quantity>
-        <Buy>Add to Cart</Buy>
-      </DescriptionStyle>
-    </DetailsStyle>
+    <CompleteDetailski>
+      <DetailsStyle>
+        <img src={Book_Image.data.attributes.formats.small.url} alt={Title} />
+
+        <DescriptionStyle>
+          <h2>{Title}</h2>
+          <p className="des">{Description}</p>
+          <h4>Published Year: {Published_Year}</h4>
+          <h4>By {Author}</h4>
+          <h4>Price: {Price}/-</h4>
+          <h4>Field: {Field}</h4>
+          <h4>No of Copies Available: {Copies_Available}</h4>
+          <Quantity>
+            <span>No of Copies</span>
+            <button>
+              <AiFillPlusCircle />
+            </button>
+            <p>0</p>
+            <button>
+              <AiFillMinusCircle />
+            </button>
+          </Quantity>
+          <Buy>Add to Cart</Buy>
+        </DescriptionStyle>
+      </DetailsStyle>
+    </CompleteDetailski>
   );
 }

@@ -19,19 +19,19 @@ export const DescriptionStyle = styled.div`
     padding: 0.5rem 1rem;
     cursor: pointer;
   }
-  h2{
+  h2 {
     font-size: 2.3rem;
     letter-spacing: -0.1rem;
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
   }
-  .des{
+  .des {
     letter-spacing: 0rem;
     font-size: 1rem;
     line-height: 120%;
     padding-bottom: 1rem;
   }
 
-  h4{
+  h4 {
     padding-bottom: 0.4rem;
   }
 `;
@@ -65,4 +65,8 @@ export const Buy = styled.button`
   background: var(--primary);
   color: white;
   font-weight: 500;
+`;
+
+export const CompleteDetailski = styled.div`
+  margin: 0rem 2rem;
 `;
