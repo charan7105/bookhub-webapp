@@ -8,10 +8,14 @@ import {
   Buy,
   CompleteDetailski,
 } from "@/styles/BookDetail";
-
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import { useStateContext } from "../../lib/context";
+import { useEffect } from "react"; //To Get Reset the Quantity Number
 
 export default function BooksDetails() {
+  //UseState
+  const { qnty, increaseQnty, decreaseQnty } = useStateContext();
+
   //Fetch SLUG
   const { query } = useRouter();
   //if your URL looks like this: /book?slug=123, calling query.slug would give you the value "123", which you can then use to fetch specific book details in your component.
@@ -25,6 +29,13 @@ export default function BooksDetails() {
   });
 
   const { data, fetching, error } = results;
+
+  useEffect(() => {
+    // Reset the quantity when the component is unmounted
+    return () => {
+      decreaseQnty(qnty); // You can use decreaseQnty to set it to 1 or any initial value
+    };
+  }, []); // Empty dependency array to run this effect once
 
   if (fetching) return <p>Loading..</p>;
   if (error) return <p>Oh no..{error.message}</p>;
@@ -41,6 +52,8 @@ export default function BooksDetails() {
     Field,
   } = data.booksCollections.data[0].attributes;
 
+  // const [qnty,SetQuantity] = useState(0)
+
   return (
     <CompleteDetailski>
       <DetailsStyle>
@@ -56,12 +69,12 @@ export default function BooksDetails() {
           <h4>No of Copies Available: {Copies_Available}</h4>
           <Quantity>
             <span>No of Copies</span>
-            <button>
-              <AiFillPlusCircle />
-            </button>
-            <p>0</p>
-            <button>
+            <button onClick={decreaseQnty}>
               <AiFillMinusCircle />
+            </button>
+            <p>{qnty}</p>
+            <button onClick={increaseQnty} disabled={qnty >= Copies_Available}>
+              <AiFillPlusCircle />
             </button>
           </Quantity>
           <Buy>Add to Cart</Buy>
