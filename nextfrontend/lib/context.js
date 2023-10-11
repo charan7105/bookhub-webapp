@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState } from "react";
 
-
 const shopContext = createContext();
 
 export const StateContext = ({ children }) => {
+  
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 

@@ -17,6 +17,7 @@ export default function App({ Component, pageProps }) {
         <Nav />
         <Component {...pageProps} />
       </Provider>
-    </StateContext>
+    </StateContext> 
+    
   );
 }
