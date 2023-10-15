@@ -41,10 +41,11 @@ export const Card = styled.div`
   justify-content: space-between;
   /* border-radius: 1rem; */
   img {
-    height: 10rem;
-    width: fit-content;
+    /* height: 10rem; */
+    max-width: 7rem;
+    border-radius: 0.2rem
   }
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `;
 
 export const CardInfo = styled.div`
@@ -103,5 +104,16 @@ export const Quantity = styled.div`
 
   svg {
     color: #494949;
+  }
+`;
+
+export const Checkout = styled.div`
+  button {
+    background: var(--primary);
+    padding: 0.7rem;
+    width: 100%;
+    color: white;
+    margin-top: 2rem;
+    cursor: pointer;
   }
 `;

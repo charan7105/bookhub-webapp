@@ -25,6 +25,23 @@ export const NavItems = styled.div`
     align-items: center;
     cursor: pointer;
   }
+  span {
+    background: var(--primary);
+    color: white;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    position: absolute;
+    right: -10%;
+    top: -20%;
+    font-weight: 700;
+    pointer-events: none;
+  }
+
   h4 {
     font-size: 0.75rem;
     padding: 0.25rem;

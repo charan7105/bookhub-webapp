@@ -1,4 +1,5 @@
 import Books from "@/components/Books";
+import { Quantity } from "@/styles/CartStyle";
 import React, { createContext, useContext, useState } from "react";
 import { AiTwotoneBook } from "react-icons/ai";
 
@@ -7,8 +8,9 @@ const shopContext = createContext();
 export const StateContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-
   const [qnty, setQuantity] = useState(1);
+  const [TotalQnty, SetTotalQnty] = useState(0);
+  const [TotalPrice, SetTotalPrice] = useState(0);
 
   //Incresing Quantity
   const increaseQnty = () => {
@@ -28,6 +30,13 @@ export const StateContext = ({ children }) => {
 
   //Add Book to cart
   const onAdd = (product, qnty) => {
+
+    //Add Price
+    SetTotalPrice(PrevPrice => PrevPrice + product.Price* qnty)
+
+    //Add Quantites
+    SetTotalQnty((PrevQnty) => PrevQnty+qnty)
+
     const exist = cartItems.find((item) => item.slug === product.slug);
 
     if (exist) {
@@ -59,6 +68,14 @@ export const StateContext = ({ children }) => {
   };
 
   const onRemove = (product, decrementBy) => {
+
+
+    //Substract Price
+    SetTotalPrice(PrevPrice => PrevPrice-product.Price)
+
+    //Remove Quantites
+    SetTotalQnty((PrevQnty) => PrevQnty - 1)
+
     const productIndex = cartItems.findIndex(
       (item) => item.slug === product.slug
     );
@@ -86,6 +103,8 @@ export const StateContext = ({ children }) => {
         setCartItems,
         onAdd,
         onRemove,
+        TotalQnty,
+        TotalPrice,
       }}
     >
       {children}

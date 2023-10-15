@@ -7,7 +7,7 @@ import { useStateContext } from "@/lib/context";
 
 export default function Nav() {
 
-  const {showCart, setShowCart} = useStateContext()
+  const {showCart, setShowCart, TotalQnty} = useStateContext()
   // console.log({ logoDark });
   return (
     <NavbarStyle>
@@ -16,6 +16,7 @@ export default function Nav() {
       </Link>
       <NavItems>
         <div onClick={() => setShowCart(true)}>
+          {TotalQnty > 0 && <span>{TotalQnty}</span>}
           <FiShoppingBag />
           <h4>Cart</h4>
         </div>
