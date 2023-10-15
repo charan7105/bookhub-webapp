@@ -36,7 +36,9 @@ export default function Cart() {
           <EmptyStyle
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.3}}
+            exit={{ opacity: 0, scale: 0.8 }}
+            
           >
             <h2>A Lot of Books are just waiting for you, pick them 😌</h2>
             <FaShoppingCart />
