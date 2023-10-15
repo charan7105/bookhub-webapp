@@ -14,7 +14,7 @@ import { useEffect } from "react"; //To Get Reset the Quantity Number
 
 export default function BooksDetails() {
   //UseState
-  const { qnty, increaseQnty, decreaseQnty } = useStateContext();
+  const { qnty, increaseQnty, decreaseQnty, onAdd } = useStateContext();
 
   //Fetch SLUG
   const { query } = useRouter();
@@ -73,11 +73,11 @@ export default function BooksDetails() {
               <AiFillMinusCircle />
             </button>
             <p>{qnty}</p>
-            <button onClick={increaseQnty} disabled={qnty >= Copies_Available}>
+            <button onClick={increaseQnty} disabled={qnty >= Copies_Available} >
               <AiFillPlusCircle />
             </button>
           </Quantity>
-          <Buy>Add to Cart</Buy>
+          <Buy onClick={() => onAdd(data.booksCollections.data[0].attributes,qnty)}>Add to Cart</Buy>
         </DescriptionStyle>
       </DetailsStyle>
     </CompleteDetailski>
