@@ -5,9 +5,10 @@ import Link from "next/link";
 import Cart from "../components/Cart";
 import { useStateContext } from "@/lib/context";
 
-export default function Nav() {
+import { AnimatePresence } from "framer-motion";
 
-  const {showCart, setShowCart, TotalQnty} = useStateContext()
+export default function Nav() {
+  const { showCart, setShowCart, TotalQnty } = useStateContext();
   // console.log({ logoDark });
   return (
     <NavbarStyle>
@@ -21,7 +22,7 @@ export default function Nav() {
           <h4>Cart</h4>
         </div>
       </NavItems>
-      {showCart && <Cart/>}
+      <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
     </NavbarStyle>
   );
 }

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const CartWrapper = styled.div`
+// const { motion } = require ("framer-motion")
+import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+
+export const CartWrapper = styled(motion.div)`
   font-family: inter;
   position: fixed;
   right: 0;
@@ -25,7 +29,7 @@ export const CartWrapper = styled.div`
   }
 `;
 
-export const CartsStyle = styled.div`
+export const CartsStyle = styled(motion.div)`
   width: 30%;
   background-color: #f1f1f1;
   padding: 3rem 4rem;
@@ -35,7 +39,7 @@ export const CartsStyle = styled.div`
 
 // export const
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,7 +52,7 @@ export const Card = styled.div`
   margin-bottom: 2rem;
 `;
 
-export const CardInfo = styled.div`
+export const CardInfo = styled(motion.div)`
   width: 50%;
   h2 {
     font-size: 1.2rem;
@@ -60,10 +64,15 @@ export const CardInfo = styled.div`
     flex-direction: space-between;
   }
 `;
-export const EmptyStyle = styled.div`
+export const EmptyStyle = styled(motion.div)`
   position: absolute;
+  h2{
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
   top: 0%;
-  left: 50%;
+  /* left: 50%; */
   transform: translate(-50%, 0%);
   display: flex;
   flex-direction: column;
@@ -71,13 +80,14 @@ export const EmptyStyle = styled.div`
   justify-content: center;
   height: 100%;
   width: 80%;
+  
   svg {
-    font-size: 8rem;
-    color: var(--secondary);
+    font-size: 6rem;
+    color: #5353537e;
   }
 `;
 
-export const Quantity = styled.div`
+export const Quantity = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,7 +117,7 @@ export const Quantity = styled.div`
   }
 `;
 
-export const Checkout = styled.div`
+export const Checkout = styled(motion.div)`
   button {
     background: var(--primary);
     padding: 0.7rem;
@@ -117,3 +127,7 @@ export const Checkout = styled.div`
     cursor: pointer;
   }
 `;
+
+export const Cards = styled(motion.div)`
+  
+`

@@ -10,16 +10,34 @@ import {
 } from "@/styles/CartStyle";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import { delay } from "framer-motion";
+
+// const { motion } = require("framer-motion") Added in Style Page
 
 export default function Cart() {
   const { cartItems, setShowCart, qnty, onAdd, onRemove, TotalPrice } =
     useStateContext();
   return (
-    <CartWrapper onClick={() => setShowCart(false)}>
-      <CartsStyle onClick={(e) => e.stopPropagation()}>
+    <CartWrapper
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setShowCart(false)}
+    >
+      <CartsStyle
+        initial={{ x: "50%" }}
+        animate={{ x: "0%" }}
+        exit={{ x: "50%" }}
+        transition={{ type: "tween" }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* If it is below 1 then text will display */}
         {cartItems.length < 1 && (
-          <EmptyStyle>
+          <EmptyStyle
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             <h2>A Lot of Books are just waiting for you, pick them 😌</h2>
             <FaShoppingCart />
           </EmptyStyle>
@@ -28,7 +46,12 @@ export default function Cart() {
         {cartItems.length >= 1 &&
           cartItems.map((item, index) => {
             return (
-              <Card key={item.slug + index}>
+              <Card
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+                key={item.slug + index}
+              >
                 <img
                   src={item.Book_Image.data.attributes.formats.small.url}
                   alt={item.Title}
