@@ -7,12 +7,29 @@ import {
   EmptyStyle,
   Quantity,
   Checkout,
+  Cards
 } from "@/styles/CartStyle";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { delay } from "framer-motion";
 
 // const { motion } = require("framer-motion") Added in Style Page
+
+const card = {
+   hidden: { opacity: 0, scale: 0.8 },
+   show: { opacity: 1, scale: 1 },
+}
+
+const cards = {
+  hidden: {opacity: 1},
+  show:{
+    opacity : 1,
+    transition: {
+      delayChildren: 0.4,
+      staggerChildren: 0.1,
+    }
+  }
+}
 
 export default function Cart() {
   const { cartItems, setShowCart, qnty, onAdd, onRemove, TotalPrice } =
@@ -45,13 +62,12 @@ export default function Cart() {
           </EmptyStyle>
         )}
         {/* If it is Above or Equal to 1 then details will display */}
+        <Cards variants={cards} initial="hidden" animate="show">
         {cartItems.length >= 1 &&
           cartItems.map((item, index) => {
             return (
-              <Card
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
+              <Card variants={card}
+              // animate = "show" initial = "show"
                 key={item.slug + index}
               >
                 <img
@@ -80,6 +96,7 @@ export default function Cart() {
               </Card>
             );
           })}
+          </Cards>
         {cartItems.length >= 1 && (
           <div>
             <h4>Subtotal: Rs.{TotalPrice}/-</h4>
